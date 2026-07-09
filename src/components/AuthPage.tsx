@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Shield, User, Lock, Mail, Eye, EyeOff, Sun, Moon, ClipboardList } from 'lucide-react';
 
 export default function AuthPage({ onLoginSuccess, darkMode, setDarkMode }) {
+  
   const [isSignUp, setIsSignUp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole] = useState('viewer'); 

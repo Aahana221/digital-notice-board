@@ -6,8 +6,8 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [view, setView] = useState('auth'); 
   const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark' || 
-      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return localStorage.getItem('theme') === 'light' || 
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches);
   });
 
   useEffect(() => {
