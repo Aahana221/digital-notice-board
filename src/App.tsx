@@ -37,7 +37,7 @@ export default function App() {
   const handleLogout = () => {
     localStorage.removeItem('currentUser');
     setUser(null);
-    setView('auth');
+    setView('auth');n
   };
 
   return (
