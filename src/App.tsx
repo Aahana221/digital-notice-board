@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import AuthPage from './components/AuthPage';
 import NoticeBoard from './components/NoticeBoard';
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -47,6 +48,16 @@ export default function App() {
       ) : (
         <NoticeBoard user={user} onLogout={handleLogout} darkMode={darkMode} setDarkMode={setDarkMode} />
       )}
+       <Routes>
+        <Route path="/SignUp" element={<SignUpPage/>} />
+        <Route path="/Signin" element={<SignInPage/>} />
+        <Route path="/NoticeBoard" element={<NoticeBoard user={user} onLogout={handleLogout} darkMode={darkMode} setDarkMode={setDarkMode} />} />
+        
+
+      </Routes>
+
     </div>
   );
+
+ 
 }
