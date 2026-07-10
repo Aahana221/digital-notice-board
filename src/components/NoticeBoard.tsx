@@ -140,17 +140,6 @@ export default function NoticeBoard({ user, onLogout, darkMode, setDarkMode }: N
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Announcements that feel clear, bright, and easy to scan.
             </h2>
-            <p className="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
-              Welcome back,{' '}
-              <span className="font-semibold text-slate-700 dark:text-slate-200">
-                {user?.name ?? 'team member'}
-              </span>{' '}
-              — you're currently in{' '}
-              <span className="font-semibold text-slate-700 dark:text-slate-200">
-                {user?.role ?? 'viewer'} mode
-              </span>
-              .
-            </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -174,6 +163,20 @@ export default function NoticeBoard({ user, onLogout, darkMode, setDarkMode }: N
               <LogOut size={16} /> Logout
             </button>
           </div>
+        </div>
+
+        <div className={`mt-4 border-t pt-4 ${darkMode ? 'border-slate-800' : 'border-slate-100'}`}>
+          <p className="text-sm leading-7 text-slate-500 dark:text-slate-400">
+            Welcome back,{' '}
+            <span className="font-semibold text-slate-700 dark:text-slate-200">
+              {user?.name ?? 'team member'}
+            </span>{' '}
+            — you're currently in{' '}
+            <span className="font-semibold text-slate-700 dark:text-slate-200">
+              {user?.role ?? 'viewer'} mode
+            </span>
+            .
+          </p>
         </div>
 
         {/* Stats Cards */}

@@ -33,9 +33,6 @@ export default function Header({ darkMode, onToggleTheme, user, onLogout, view }
             <p className="text-xs font-bold uppercase tracking-[0.28em] text-blue-500 dark:text-blue-400">
               Digital notice board
             </p>
-            <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-              Keep your team informed, calm, and aligned
-            </h1>
           </div>
         </div>
 
@@ -101,6 +98,11 @@ export default function Header({ darkMode, onToggleTheme, user, onLogout, view }
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
         </div>
+      </div>
+      <div className={`mt-3 border-t pt-3 ${darkMode ? 'border-slate-800' : 'border-slate-100'}`}>
+        <h1 className="text-base font-medium tracking-tight text-slate-500 dark:text-slate-400 sm:text-lg">
+          Keep your team informed, calm, and aligned
+        </h1>
       </div>
     </header>
   );

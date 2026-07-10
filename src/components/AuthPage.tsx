@@ -71,13 +71,16 @@ export default function AuthPage({ onLoginSuccess, darkMode, setDarkMode }: Auth
           <p className="mt-6 text-xs font-bold uppercase tracking-[0.3em] text-blue-100/80">
             Secure workspace access
           </p>
-          <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl">
+          <h2 className="mt-2 text-3xl font-bold leading-tight sm:text-4xl">
             Welcome to your polished digital notice hub.
           </h2>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-blue-50/80">
-            Share important updates, policy changes, and milestones in a focused space that feels
-            clear, calm, and polished.
-          </p>
+
+          <div className={`mt-4 border-t border-white/20 pt-4`}>
+            <p className="max-w-xl text-sm leading-7 text-blue-50/80">
+              Share important updates, policy changes, and milestones in a focused space that feels
+              clear, calm, and polished.
+            </p>
+          </div>
 
           <div className="mt-auto space-y-3 pt-8">
             {[
