@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AuthPage from "./components/AuthPage";
 import NoticeBoard from "./components/NoticeBoard";
 import Layout from "./components/Layout";
+import Login from "./components/signup";
 
 type UserData = {
   name: string;
@@ -73,7 +74,8 @@ export default function App() {
 
 
   return (
-    // <Layout
+    <>
+    {/* // <Layout
     //   darkMode={darkMode}
     //   onToggleTheme={() =>
     //     setDarkMode((c) => !c)
@@ -83,23 +85,19 @@ export default function App() {
     //   footerVariant={
     //     user ? "compact" : "default"
     //   }
-    // >
+    // > */}
 
       <Routes>
 
         {/* Login Route */}
         <Route
-          path="/"
+          path="/Login"
           element={
             user ? (
               <Navigate to="/notice-board" />
             ) : (
-              <AuthPage
-                onLoginSuccess={handleLoginSuccess}
-                darkMode={darkMode}
-                setDarkMode={setDarkMode}
-              />
-            )
+           <Login/>
+            ) 
           }
         />
 
@@ -130,6 +128,10 @@ export default function App() {
 
       </Routes>
 
-    // </Layout>
+      <h1>Welcome to Digital Notice Board</h1>
+      
+
+    {/* // </Layout> */}
+    </>
   );
 }
