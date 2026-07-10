@@ -1,4 +1,5 @@
 import React, { useState, type FormEvent } from 'react';
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   ClipboardList,
@@ -20,6 +21,8 @@ type AuthPageProps = {
 };
 
 export default function AuthPage({ onLoginSuccess, darkMode, setDarkMode }: AuthPageProps) {
+
+  const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole] = useState('viewer');
