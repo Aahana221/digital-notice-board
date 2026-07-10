@@ -3,6 +3,7 @@ import AuthPage from './components/AuthPage';
 import NoticeBoard from './components/NoticeBoard';
 import Layout from './components/Layout';
 import { supabase } from "./utils/supabase";
+import Login from './components/signup';
 
 type UserData = {
   name: string;
@@ -63,12 +64,13 @@ export default function App() {
       onLogout={handleLogout}
       view={view}
       footerVariant={view === 'dashboard' ? 'compact' : 'default'}
-    >
-      {view === 'auth' ? (
+    > 
+    <Login />
+      {/* {view === 'auth' ? (
         <AuthPage onLoginSuccess={handleLoginSuccess} darkMode={darkMode} setDarkMode={setDarkMode} />
       ) : (
         <NoticeBoard user={user} onLogout={handleLogout} darkMode={darkMode} setDarkMode={setDarkMode} />
-      )}
+      )} */}
     </Layout>
   );
 }
