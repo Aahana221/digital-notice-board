@@ -1,26 +1,26 @@
-<<<<<<< HEAD
 :root {
-  /* Refined, cohesive color palette */
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --secondary: #8b5cf6;
-  --accent: #ec4899;
+  /* Soft, structured background tones */
+  --background: #f5f5f4;      
+  --card: #ffffff;            
 
-  --text: #4b5563;
-  --heading: #1f2937;
-  --background: #eef2ff;
-  --card: rgba(255, 255, 255, 0.8);
+  /* Semantic Typography Palette (Purpose-driven coloring) */
+  --text-primary: #1c1917;    /* Near-black for highly formal Notice Titles */
+  --text-secondary: #57534e;  /* Soft Charcoal for informational body paragraphs */
+  --text-muted: #878078;      /* Light warm gray for secondary metadata/dates */
   
-  /* Smoother, realistic shadow depths */
-  --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.04);
-  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 20px 40px rgba(99, 102, 241, 0.12);
+  /* Purpose-driven functional tints */
+  --accent-action: #7c2d12;   /* Dark terracotta for quiet inline interactive items */
+  --accent-create: #15803d;   /* Emerald Green for clean, constructive adding/creation actions */
+  --badge-bg: #f4f1ea;        
+  
+  /* High-aesthetic physical drop shadow depths */
+  --pop-shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.04), 0 1px 3px rgba(28, 25, 23, 0.02);
+  --pop-shadow-md: 0 12px 24px rgba(28, 25, 23, 0.07), 0 4px 12px rgba(28, 25, 23, 0.03);
 
-  /* Unified modern typography */
   font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-/* Global resets */
+/* Global Reset & High-Contrast Grid Foundation */
 * {
   margin: 0;
   padding: 0;
@@ -29,700 +29,217 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7ff, #fdf2f8, #ecfeff);
+  background-color: var(--background);
+  /* A much bolder, more deliberate grid backdrop that remains soft through low-opacity ink lines */
+  background-image: 
+    linear-gradient(90deg, rgba(120, 113, 108, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(0deg, rgba(120, 113, 108, 0.12) 1.5px, transparent 1.5px);
+  background-size: 20px 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Changed from center to accommodate growing content naturally */
-  padding: 40px 20px;
-  color: var(--text);
+  align-items: flex-start;
+  padding: 40px 20px; 
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
-/* Main Application Container */
+/* Main Application Canvas */
 #root {
   width: 100%;
-  max-width: 1100px;
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  max-width: 1140px;
+  background: #ffffff;
+  border-radius: 12px; 
+  padding: 32px; 
+  box-shadow: var(--pop-shadow-md); /* Makes the main app area cleanly separate from the grid background */
+  border: 1px solid rgba(214, 211, 209, 0.8);
 }
 
-/* Header & Nav */
+/* Header Banner - Lightweight Profile with Integrated Button Alignment */
 header, nav {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #ffffff;
-  padding: 30px;
-  border-radius: 18px;
-  margin-bottom: 35px;
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+  background: linear-gradient(135deg, #fdfbf7, #f4f1ea);
+  padding: 16px 24px; 
+  border-radius: 8px;
+  margin-bottom: 24px; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  border: 1px solid #e7e5e4;
 }
 
 header h1, nav h1 {
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  font-family: inherit; /* Unified typography */
-}
-
-/* Typography elements */
-h1, h2 {
-  color: var(--heading);
-  letter-spacing: -0.02em;
-}
-
-h2 {
-  font-size: 22px;
+  color: var(--text-primary); /* Formally dark */
+  font-size: 20px; 
   font-weight: 700;
+  letter-spacing: -0.01em;
+  font-family: Georgia, Garamond, serif;
 }
 
-/* Notice Board Grid Layout */
-.notice-board {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cleaned up minmax distribution */
-  gap: 25px;
+/* Organized Content Descriptions */
+p {
+  color: var(--text-secondary); /* Balanced readability tone */
+  font-size: 14px;
 }
 
-/* Notice Cards */
-.notice, .card {
-  background: var(--card);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 24px;
-  /* Removed the harsh red border, replaced with a soft, elegant neutral/indigo tint */
-  border: 1px solid rgba(99, 102, 241, 0.08); 
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Card Hover Effects */
-.notice:hover, .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(99, 102, 241, 0.2);
-}
-
-/* Notice Card Specific Styling */
-.notice h2 {
-  color: var(--primary);
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-/* Category Badge */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #e0e7ff, #fce7f3);
-  color: #4f46e5;
+.meta-text {
+  color: var(--text-muted); /* Purpose color for secondary timestamps or authors */
   font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-/* Form Inputs / Interactive controls */
+/* Clean Form Component Management */
+.form-group-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px; 
+  margin-bottom: 20px; 
+  background: #fafaf9;
+  padding: 16px; 
+  border-radius: 8px;
+  border: 1px solid #e7e5e4;
+}
+
 input, select, textarea {
   width: 100%;
-  padding: 12px 16px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  padding: 10px 14px; 
+  border-radius: 6px;
+  border: 1px solid #e7e5e4;
   background: #ffffff;
-  color: var(--heading);
-  font-size: 15px;
+  color: var(--text-primary);
+  font-size: 14px;
   font-family: inherit;
-  transition: all 0.2s ease;
-  margin-bottom: 16px; /* Added spacing to stop elements from sticking together */
+  transition: all 0.15s ease-in-out;
 }
 
 input:focus, select:focus, textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+  border-color: var(--text-muted);
+  box-shadow: 0 0 0 3px rgba(120, 113, 108, 0.05);
 }
 
-/* Universal Button Styling */
+/* Strict Layout Management for Content Grid */
+.notice-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px; 
+}
+
+/* Dashboard Cards with High-Aesthetic Pop-Out Properties */
+.notice, .card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 24px; 
+  border: 1px solid #e7e5e4;
+  box-shadow: var(--pop-shadow-sm);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card Hover Pop Effect */
+.notice:hover, .card:hover {
+  transform: translateY(-4px); /* Clean upward card pop */
+  box-shadow: var(--pop-shadow-md); /* Shadow deepens to increase dimension */
+  border-color: rgba(120, 113, 108, 0.3);
+}
+
+/* Formal Notice Title */
+.notice h2 {
+  font-family: Georgia, Garamond, serif;
+  color: var(--text-primary); /* Deepest tone for vital document titles */
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Warm, Soft Minimalist Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px; 
+  border-radius: 4px;
+  background: var(--badge-bg);
+  color: var(--text-secondary); 
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Standard Buttons - Borderless & Seamlessly Blended */
 button {
-  border: none;
-  padding: 12px 24px;
-  border-radius: 12px; /* Switched to a sleeker semi-square modern radius */
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
+  border: none; 
+  outline: none;
+  padding: 8px 16px; 
+  border-radius: 6px;
+  background-color: #f4f1ea; 
+  color: var(--accent-action); /* Purpose color: subtle interactive identifier */
   cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
-  transition: all 0.2s ease;
+  font-size: 13px;
+  font-weight: 500; 
+  transition: background-color 0.15s ease;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
 }
 
 button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  filter: brightness(1.05);
+  background-color: #e7e5e4; 
 }
 
 button:active {
-  transform: translateY(0);
+  background-color: #d6d3d1;
 }
 
-/* Floating Action Button (FAB) */
+/* Header Integrated Creation Button - Seamless context, specific purpose color tint */
 .add-button {
-  position: fixed;
-  right: 32px;
-  bottom: 32px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%; /* Keeps it a perfect circle */
-  font-size: 24px;
-  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
-  z-index: 100;
+  position: static; 
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  background-color: rgba(21, 128, 61, 0.08); /* Transparent soft green background */
+  color: var(--accent-create); /* Purpose color: signals clean workspace generation */
+  padding: 8px 14px;
 }
 
-/* Responsive Overrides */
+.add-button:hover {
+  background-color: rgba(21, 128, 61, 0.15);
+}
+
+/* Secondary Actions / Destructive or Alternate Options */
+button.secondary {
+  background-color: transparent;
+  color: var(--text-muted);
+}
+
+button.secondary:hover {
+  background-color: #fafaf9;
+}
+
+/* Fully Responsive Breakdown */
 @media (max-width: 768px) {
   body {
-    padding: 16px;
+    padding: 16px 8px;
   }
-=======
-:root{
-  --primary:#5b6cf0;
-  --primary-light:#eef2ff;
-  --secondary:#7c3aed;
-
-  --text:#475569;
-  --heading:#0f172a;
-
-  --background:#f8fafc;
-  --surface:rgba(255,255,255,.72);
-
-  --border:#e2e8f0;
-
-  --shadow:
-    0 8px 24px rgba(15,23,42,.08);
-
-  --radius:18px;
-
-  font-family:"Inter","Segoe UI",sans-serif;
-}
-
-/* ==========================
-   Global
-========================== */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;`
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-
-  min-height:100vh;
-
-  background:
-  linear-gradient(
-    135deg,
-    #f8fafc 0%,
-    #eef2ff 55%,
-    #fdf2f8 100%
-  );
-
-  display:flex;
-  justify-content:center;
-  align-items:center;
-
-  padding:40px;
-
-  color:var(--text);
-
-}
-
-/* ==========================
-   Main Container
-========================== */
-
-#root{
-
-  width:95%;
-  max-width:1100px;
-
-  min-height:85vh;
-
-  background:rgba(255,255,255,.65);
-
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-
-  border:1px solid rgba(255,255,255,.8);
-
-  border-radius:28px;
-
-  padding:40px;
-
-  box-shadow:
-    0 20px 60px rgba(15,23,42,.08);
-
-}
-
-/* ==========================
-   Header
-========================== */
-
-header,
-nav{
-
-  background:#ffffff;
-
-  border:1px solid var(--border);
-
-  border-radius:22px;
-
-  padding:24px 30px;
-
-  margin-bottom:35px;
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  box-shadow:var(--shadow);
-
-}
-
-header h1,
-nav h1{
-
-  color:var(--heading);
-
-  font-size:34px;
-
-  font-weight:700;
-
-  letter-spacing:-0.5px;
-
-}
-
-/* ==========================
-   Typography
-========================== */
-
-h1,
-h2,
-h3{
-  color:var(--heading);
-}
-
-h2{
-
-  font-size:22px;
-
-  margin-bottom:12px;
-
-}
-
-p{
-
-  line-height:1.7;
-
-  color:#64748b;
-
-}
-
-/* ==========================
-   Notice Board
-========================== */
-
-.notice-board{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
-  gap:24px;
-
-}
-
-/* ==========================
-   Cards
-========================== */
-
-.notice,
-.card{
-
-  background:rgba(255,255,255,.75);
-
-  backdrop-filter:blur(14px);
-
-  border:1px solid var(--border);
-
-  border-radius:22px;
-
-  padding:24px;
-
-  box-shadow:var(--shadow);
-
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    border-color .25s ease;
-
-}
-
-.notice:hover,
-.card:hover{
-
-  transform:translateY(-6px);
-
-  border-color:#c7d2fe;
-
-  box-shadow:
-    0 18px 40px rgba(15,23,42,.12);
-
-}
-
-.notice h2{
-
-  color:#334155;
-
-}
-
-.notice p{
-
-  margin:16px 0;
-
-}
-
-/* ==========================
-   Badge
-========================== */
-
-.badge{
-
-  display:inline-block;
-
-  padding:6px 14px;
-
-  border-radius:999px;
-
-  background:#eef2ff;
-
-  color:#4f46e5;
-
-  font-size:13px;
-
-  font-weight:600;
-
-}
-
-/* ==========================
-   Buttons
-========================== */
-
-button{
-
-  border:1px solid var(--border);
-
-  background:#ffffff;
-
-  color:#334155;
-
-  padding:10px 18px;
-
-  border-radius:12px;
-
-  font-size:14px;
-
-  font-weight:600;
-
-  cursor:pointer;
-
-  transition:
-    background .25s,
-    border-color .25s,
-    transform .25s,
-    box-shadow .25s;
-
-}
-
-button:hover{
-
-  background:#f8fafc;
-
-  border-color:#cbd5e1;
-
-  transform:translateY(-2px);
-
-  box-shadow:
-    0 6px 16px rgba(15,23,42,.08);
-
-}
-
-button:active{
-
-  transform:translateY(0);
-
-}
-
-button:focus-visible{
-
-  outline:2px solid var(--primary);
-
-  outline-offset:3px;
-
-}
-
-/* Primary Button */
-
-.button-primary{
-
-  background:var(--primary);
-
-  color:#fff;
-
-  border:none;
-
-}
-
-.button-primary:hover{
-
-  background:#4f46e5;
-
-}
-
-/* ==========================
-   Forms
-========================== */
-
-input,
-select,
-textarea{
-
-  width:100%;
-
-  margin-top:8px;
-
-  padding:14px;
-
-  border-radius:14px;
-
-  border:1px solid var(--border);
-
-  background:#fff;
-
-  font-size:15px;
-
-  color:var(--text);
-
-  transition:
-    border-color .25s,
-    box-shadow .25s;
-
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-
-  outline:none;
-
-  border-color:var(--primary);
-
-  box-shadow:
-    0 0 0 4px rgba(99,102,241,.12);
-
-}
-
-/* ==========================
-   Floating Add Button
-========================== */
-
-.add-button{
-
-  position:fixed;
-
-  right:35px;
-
-  bottom:35px;
-
-  width:56px;
-
-  height:56px;
-
-  border-radius:50%;
-
-  background:#ffffff;
-
-  color:var(--primary);
-
-  border:1px solid var(--border);
-
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
-
-  font-size:28px;
-
-  box-shadow:
-    0 10px 24px rgba(15,23,42,.12);
-
-}
-
-.add-button:hover{
-
-  background:#f8fafc;
-
-  transform:translateY(-3px);
-
-}
-
-/* ==========================
-   Tables (Optional)
-========================== */
-
-table{
-
-  width:100%;
-
-  border-collapse:collapse;
-
-}
-
-th,
-td{
-
-  padding:14px;
-
-  text-align:left;
-
-  border-bottom:1px solid var(--border);
-
-}
-
-th{
-
-  color:var(--heading);
-
-  background:#f8fafc;
-
-}
-
-/* ==========================
-   Scrollbar
-========================== */
-
-::-webkit-scrollbar{
-
-  width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-  background:#cbd5e1;
-
-  border-radius:10px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-  background:#94a3b8;
-
-}
-
-/* ==========================
-   Responsive
-========================== */
-
-@media(max-width:768px){
-
-body{
-
-  padding:20px;
-
-  align-items:flex-start;
-
-}
->>>>>>> 381e5cc07f9fde75f73d72df7abbd5172bf71b46
 
   #root {
-    padding: 24px;
-    border-radius: 16px;
+    padding: 16px;
   }
 
-<<<<<<< HEAD
   header, nav {
-    padding: 20px;
-    margin-bottom: 24px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    flex-direction: row; 
   }
-=======
-  padding:24px;
-
-  border-radius:22px;
-
-}
-
-header,
-nav{
-
-  flex-direction:column;
-
-  align-items:flex-start;
-
-  gap:14px;
-
-}
-
-header h1,
-nav h1{
-
-  font-size:28px;
-
-}
-
-.notice-board{
-
-  grid-template-columns:1fr;
-
-}
-
-.add-button{
-
-  right:20px;
-
-  bottom:20px;
-
-  width:52px;
-
-  height:52px;
-
-  font-size:24px;
-
-}
->>>>>>> 381e5cc07f9fde75f73d72df7abbd5172bf71b46
 
   header h1, nav h1 {
-    font-size: 24px;
+    font-size: 17px;
   }
-  
-  .add-button {
-    right: 20px;
-    bottom: 20px;
+
+  .notice-board {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
