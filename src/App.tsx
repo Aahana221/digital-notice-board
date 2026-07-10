@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AuthPage from './components/AuthPage';
 import NoticeBoard from './components/NoticeBoard';
 import Layout from './components/Layout';
+import { supabase } from "./utils/supabase";
 
 type UserData = {
   name: string;
